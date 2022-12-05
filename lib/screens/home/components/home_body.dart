@@ -5,8 +5,8 @@ import 'package:shop_app/screens/home/components/product_card.dart';
 
 import 'category.dart';
 
-class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
+class HomeBody extends StatelessWidget {
+  const HomeBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
