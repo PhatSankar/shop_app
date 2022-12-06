@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/constants.dart';
+import 'package:shop_app/models/FakeProduct.dart';
+import 'package:shop_app/repositories/fake_product_repository.dart';
 
 class Categories extends StatefulWidget {
   const Categories({Key? key}) : super(key: key);
@@ -10,13 +12,18 @@ class Categories extends StatefulWidget {
 
 class _CategoriesState extends State<Categories> {
   List<String> categories = [
-    "Hand bag",
+    "Electronics",
     "Jewellery",
-    "Footwear",
-    "Dresses",
-    "Watch"
+    "Men's clothing",
+    "Women's clothing",
   ];
   int selectedIndex = 0;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/constants.dart';
-import 'package:shop_app/models/Product.dart';
-import 'package:shop_app/screens/home/components/product_card.dart';
+import 'package:shop_app/screens/home/components/buildListProductCard.dart';
 
 import 'category.dart';
 
@@ -24,19 +23,11 @@ class HomeBody extends StatelessWidget {
                 .copyWith(fontWeight: FontWeight.bold),
           ),
         ),
-        Categories(),
-        Expanded(
+        const Categories(),
+        const Expanded(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: kDefaultPaddin),
-              child: GridView.builder(
-                  itemCount: products.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 0.75,
-                      crossAxisSpacing: kDefaultPaddin,
-                      mainAxisSpacing: kDefaultPaddin),
-                  itemBuilder: (context, index) =>
-                      ProductCard(products[index])),
+              child: BuildProductCardList(),
             )),
       ],
     );

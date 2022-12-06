@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_app/constants.dart';
+import 'package:shop_app/models/FakeProduct.dart';
 import 'package:shop_app/screens/home/components/home_body.dart';
+import 'package:shop_app/repositories/fake_product_repository.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
