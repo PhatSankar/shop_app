@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_app/constants.dart';
-import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/models/FakeProduct.dart';
 import 'package:shop_app/screens/detail/components/add_to_cart_and_buy_now.dart';
-import 'package:shop_app/screens/detail/components/cart_couter.dart';
 import 'package:shop_app/screens/detail/components/color_and_size.dart';
 import 'package:shop_app/screens/detail/components/product_description.dart';
 import 'package:shop_app/screens/detail/components/product_title_with_image.dart';
@@ -11,9 +9,9 @@ import 'package:shop_app/screens/detail/components/product_title_with_image.dart
 import 'cart_counter_and_fav_btn.dart';
 
 class DetailBody extends StatelessWidget {
-  final Product product;
+  final FakeProduct product;
 
-  DetailBody(Product this.product, {Key? key}) : super(key: key);
+  DetailBody(FakeProduct this.product, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +26,7 @@ class DetailBody extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(top: size.height * 0.33),
                   padding: EdgeInsets.only(
-                      top: size.height * 0.12,
+                      top: size.height * 0.075,
                       left: kDefaultPaddin,
                       right: kDefaultPaddin),
                   decoration: const BoxDecoration(

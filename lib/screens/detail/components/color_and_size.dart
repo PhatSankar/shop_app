@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/constants.dart';
-import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/models/FakeProduct.dart';
 
 class ColorAndSize extends StatelessWidget {
-  final Product product;
+  final FakeProduct product;
 
-  const ColorAndSize(Product this.product, {Key? key}) : super(key: key);
+  const ColorAndSize(FakeProduct this.product, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +32,9 @@ class ColorAndSize extends StatelessWidget {
         Expanded(
           child: RichText(
               text: TextSpan(style: TextStyle(color: kTextColor), children: [
-            TextSpan(text: "Size\n"),
+            TextSpan(text: "Category\n"),
             TextSpan(
-                text: "${product.size}",
+                text: "${product.category}",
                 style: Theme.of(context)
                     .textTheme
                     .headline5!

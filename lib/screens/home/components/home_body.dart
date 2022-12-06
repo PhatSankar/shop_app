@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/bloc/products_bloc/products_bloc.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/screens/home/components/buildListProductCard.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'category.dart';
 
@@ -24,10 +26,13 @@ class HomeBody extends StatelessWidget {
           ),
         ),
         const Categories(),
-        const Expanded(
+        Expanded(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: kDefaultPaddin),
-              child: BuildProductCardList(),
+              padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+              child: BlocProvider<ProductsBloc>(
+                create: (context) => ProductsBloc(),
+                child: const BuildProductCardList(),
+              ),
             )),
       ],
     );

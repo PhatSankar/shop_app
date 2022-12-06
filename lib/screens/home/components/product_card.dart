@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/constants.dart';
+import 'package:shop_app/models/FakeProduct.dart';
 import 'package:shop_app/models/Product.dart';
 
 class ProductCard extends StatelessWidget {
-  Product product;
+  FakeProduct product;
 
-  ProductCard(Product this.product, {Key? key}) : super(key: key);
+  ProductCard(FakeProduct this.product, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +21,11 @@ class ProductCard extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(kDefaultPaddin),
               decoration: BoxDecoration(
-                color: product.color,
                 borderRadius: BorderRadius.circular(16),
               ),
               child:Hero (
                 tag: "${product.id}",
-                child:  Image.asset(product.image!!),
+                child:  Image.network(product.image!!),
               ),
             ),
           ),

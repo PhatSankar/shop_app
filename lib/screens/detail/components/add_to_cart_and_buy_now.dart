@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/constants.dart';
-import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/models/FakeProduct.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AddToCartAndBuyNow extends StatelessWidget {
-  final Product product;
-  const AddToCartAndBuyNow(Product this.product, {Key? key}) : super(key: key);
+  final FakeProduct product;
+  const AddToCartAndBuyNow(FakeProduct this.product, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,13 @@ class AddToCartAndBuyNow extends StatelessWidget {
             width: 58,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18),
-                border: Border.all(color: product.color!!)),
+                // border: Border.all(color: product.color!!)
+            ),
             child: IconButton(
               icon: SvgPicture.asset(
-                "assets/icons/add_to_cart.svg", color: product.color,),
+                "assets/icons/add_to_cart.svg",
+                // color: product.color,
+              ),
               onPressed: () {},
             ),
           ),
@@ -31,7 +34,7 @@ class AddToCartAndBuyNow extends StatelessWidget {
             height: 50,
             child: ElevatedButton(
               style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(product.color!!),
+                  // backgroundColor: MaterialStateProperty.all(product.color!!),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18)
                   ))

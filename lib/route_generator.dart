@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:shop_app/models/FakeProduct.dart';
 import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/screens/detail/detail_screen.dart';
 import 'package:shop_app/screens/home/home_screen.dart';
@@ -13,7 +14,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (context) => HomeScreen());
       case "/detail":
         final routeArgs = settings.arguments as Map;
-        final Product product = routeArgs['product'] as Product;
+        final FakeProduct product = routeArgs['product'] as FakeProduct;
         return MaterialPageRoute(builder: (context) => DetailScreen(product));
       default:
         return _errorRoute();
