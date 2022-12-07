@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/bloc/products_bloc/products_bloc.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/models/FakeProduct.dart';
 import 'package:shop_app/repositories/fake_product_repository.dart';
@@ -13,15 +15,25 @@ class Categories extends StatefulWidget {
 class _CategoriesState extends State<Categories> {
   List<String> categories = [
     "Electronics",
-    "Jewellery",
+    "Jewelery",
     "Men's clothing",
     "Women's clothing",
   ];
+
+  late ProductsBloc _productsBloc;
   int selectedIndex = 0;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    _productsBloc = BlocProvider.of(context);
+    _productsBloc.add(GetCategoryAndLimitedEvent(6, categories[0].toLowerCase()));
   }
 
 
@@ -43,6 +55,8 @@ class _CategoriesState extends State<Categories> {
   Widget buildCategory(int index) {
     return GestureDetector(
       onTap: () {
+        _productsBloc.add(GetCategoryAndLimitedEvent(6, categories[index].toLowerCase()));
+
         setState(() {
           selectedIndex = index;
         });

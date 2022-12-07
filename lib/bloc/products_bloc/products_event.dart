@@ -12,3 +12,13 @@ class GetLimitedEvent extends ProductsEvent {
   List<Object?> get props => [limited];
 
 }
+
+class GetCategoryAndLimitedEvent extends ProductsEvent {
+  final int limited;
+  final String category;
+  const GetCategoryAndLimitedEvent(this.limited, this.category);
+  @override
+  // TODO: implement props
+  List<Object?> get props => [limited, category];
+
+}

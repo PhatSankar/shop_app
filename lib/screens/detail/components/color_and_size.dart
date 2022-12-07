@@ -34,7 +34,7 @@ class ColorAndSize extends StatelessWidget {
               text: TextSpan(style: TextStyle(color: kTextColor), children: [
             TextSpan(text: "Category\n"),
             TextSpan(
-                text: "${product.category}",
+                text: "${product.category.toUpperCase()}",
                 style: Theme.of(context)
                     .textTheme
                     .headline5!

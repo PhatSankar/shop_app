@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:shop_app/models/FakeProduct.dart';
-import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/screens/detail/detail_screen.dart';
 import 'package:shop_app/screens/home/home_screen.dart';
 

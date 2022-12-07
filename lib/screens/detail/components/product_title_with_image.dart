@@ -2,7 +2,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/models/FakeProduct.dart';
-import 'package:shop_app/models/Product.dart';
 
 class ProductTitleWithImage extends StatelessWidget {
   FakeProduct product;

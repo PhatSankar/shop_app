@@ -20,7 +20,6 @@ class DetailBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: size.height,
             child: Stack(
               children: [
                 Container(

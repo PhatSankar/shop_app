@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:shop_app/bloc/products_bloc/products_bloc.dart';
 import 'package:shop_app/constants.dart';
-import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/screens/home/components/product_card.dart';
 
 class BuildProductCardList extends StatefulWidget {

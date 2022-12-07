@@ -11,17 +11,27 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
   ProductsBloc() : super(ProductsInitial()) {
     on<ProductsEvent>((event, emit) {});
     on<GetLimitedEvent>((event, emit) async {
-      if (state is! ProductsLoading)
-      {
+      if (state is! ProductsLoading) {
         emit(ProductsLoading());
         try {
-          List<FakeProduct> listProduct = await ProductRepository.instance.getLimitedProducts(event.limited);
+          List<FakeProduct> listProduct = await ProductRepository.instance
+              .getLimitedProducts(event.limited);
           emit(ProductsComplete(productsList: listProduct));
-        }
-        catch (ex) {
+        } catch (ex) {
           print(ex.toString());
           emit(ProductsFailure());
         }
+      }
+    });
+    on<GetCategoryAndLimitedEvent>((event, emit) async {
+      emit(ProductsLoading());
+      try {
+        List<FakeProduct> listProduct = await ProductRepository.instance
+            .getCategoryAndLimitedProducts(event.limited, event.category);
+        emit(ProductsComplete(productsList: listProduct));
+      } catch (ex) {
+        print(ex.toString());
+        emit(ProductsFailure());
       }
     });
   }
