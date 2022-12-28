@@ -3,9 +3,15 @@ import 'package:provider/provider.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/models/FakeProduct.dart';
 
-class ColorAndSize extends StatelessWidget {
-
+class ColorAndSize extends StatefulWidget {
   const ColorAndSize({Key? key}) : super(key: key);
+
+  @override
+  State<ColorAndSize> createState() => _ColorAndSizeState();
+}
+
+class _ColorAndSizeState extends State<ColorAndSize> {
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +25,39 @@ class ColorAndSize extends StatelessWidget {
               const Text("Color"),
               Row(
                 children: [
-                  ColorDot(
-                    color: Color(0xFF356C95),
-                    isSelected: true,
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = 0;
+                      });
+                    },
+                    child: ColorDot(
+                      color: Color(0xFF356C95),
+                      isSelected: selectedIndex == 0,
+                    ),
                   ),
-                  ColorDot(color: Color(0xFFF8C078)),
-                  ColorDot(color: Color(0xFFA29B9B)),
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = 1;
+                      });
+                    },
+                    child: ColorDot(
+                      color: Color(0xFFF8C078),
+                      isSelected: selectedIndex == 1,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = 2;
+                      });
+                    },
+                    child: ColorDot(
+                      color: Color(0xFFA29B9B),
+                      isSelected: selectedIndex == 2,
+                    ),
+                  ),
                 ],
               )
             ],
