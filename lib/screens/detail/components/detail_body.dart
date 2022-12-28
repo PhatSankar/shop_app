@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/models/FakeProduct.dart';
 import 'package:shop_app/screens/detail/components/add_to_cart_and_buy_now.dart';
@@ -9,9 +10,8 @@ import 'package:shop_app/screens/detail/components/product_title_with_image.dart
 import 'cart_counter_and_fav_btn.dart';
 
 class DetailBody extends StatelessWidget {
-  final FakeProduct product;
 
-  DetailBody(FakeProduct this.product, {Key? key}) : super(key: key);
+  DetailBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,17 +35,17 @@ class DetailBody extends StatelessWidget {
                           topRight: Radius.circular(24))),
                   child: Column(
                     children: [
-                      ColorAndSize(product),
+                      ColorAndSize(),
                       SizedBox(height: kDefaultPaddin / 2,),
-                      ProductDescription(product),
+                      ProductDescription(),
                       SizedBox(height: kDefaultPaddin / 2,),
                       CartCounterAndFavBtn(),
                       SizedBox(height: kDefaultPaddin / 2,),
-                      AddToCartAndBuyNow(product)
+                      AddToCartAndBuyNow()
                     ],
                   ),
                 ),
-                ProductTitleWithImage(product),
+                ProductTitleWithImage(),
               ],
             ),
           )

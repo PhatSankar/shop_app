@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/models/FakeProduct.dart';
 import 'package:shop_app/screens/detail/components/detail_body.dart';
 
 
 class DetailScreen extends StatelessWidget {
-  FakeProduct product;
 
-  DetailScreen(FakeProduct this.product, {Key? key}) : super(key: key);
+  DetailScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: product.color,
-      appBar: buildDetailAppBar(product, context),
+      appBar: buildDetailAppBar(context),
       body: Container(
-      child: DetailBody(product),
+      child: DetailBody(),
       color: Colors.blueAccent,),
     );
   }
 
-  AppBar buildDetailAppBar(FakeProduct product, BuildContext context) {
+  AppBar buildDetailAppBar(BuildContext context) {
     return AppBar(
       elevation: 0,
       // backgroundColor: product.color,

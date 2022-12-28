@@ -4,9 +4,8 @@ import 'package:shop_app/models/FakeProduct.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AddToCartAndBuyNow extends StatelessWidget {
-  final FakeProduct product;
 
-  const AddToCartAndBuyNow(FakeProduct this.product, {Key? key})
+  const AddToCartAndBuyNow({Key? key})
       : super(key: key);
 
   @override

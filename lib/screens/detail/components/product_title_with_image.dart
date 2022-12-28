@@ -1,15 +1,16 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/models/FakeProduct.dart';
 
 class ProductTitleWithImage extends StatelessWidget {
-  FakeProduct product;
 
-  ProductTitleWithImage(FakeProduct this.product, {Key? key}) : super(key: key);
+  ProductTitleWithImage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final product = Provider.of<FakeProduct>(context);
     Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),

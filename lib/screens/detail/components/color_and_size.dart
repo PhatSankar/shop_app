@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/models/FakeProduct.dart';
 
 class ColorAndSize extends StatelessWidget {
-  final FakeProduct product;
 
-  const ColorAndSize(FakeProduct this.product, {Key? key}) : super(key: key);
+  const ColorAndSize({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final product = Provider.of<FakeProduct>(context);
     return Row(
       children: [
         Expanded(
